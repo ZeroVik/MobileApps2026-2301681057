@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieparadiso.data.MovieEntity
 import com.example.movieparadiso.databinding.ItemMovieBinding
+import android.view.View
 
 class MovieAdapter(
     private val onMovieClick: (MovieEntity) -> Unit
@@ -47,11 +48,13 @@ class MovieAdapter(
             binding.tvMovieStatus.text = movie.status
             binding.tvMovieRating.text = "★ ${movie.rating}"
 
-            binding.tvFavorite.text = if (movie.isFavorite) {
-                "Favorite"
+            binding.tvFavorite.visibility = if (movie.isFavorite) {
+                View.VISIBLE
             } else {
-                "Library"
+                View.GONE
             }
+
+            binding.tvFavorite.text = "★ Favorite"
 
             binding.root.setOnClickListener {
                 onMovieClick(movie)

@@ -95,11 +95,30 @@ class MovieDetailsActivity : AppCompatActivity() {
             movie.notes
         }
 
-        if (movie.videoUri.isNullOrBlank()) {
+        val catalogStreamUrl = StreamCatalog.getStreamUrlForMovie(movie.title)
+
+        if (movie.videoUri.isNullOrBlank() && catalogStreamUrl.isNullOrBlank()) {
             binding.tvVideoInfo.text = "No video attached"
             binding.btnPlayMovie.visibility = View.GONE
         } else {
-            binding.tvVideoInfo.text = "Video attached"
+            binding.tvVideoInfo.text = when {
+                !movie.videoUri.isNullOrBlank() && StreamCatalog.isOnlineStream(movie.videoUri) -> {
+                    "Online stream attached"
+                }
+
+                !movie.videoUri.isNullOrBlank() -> {
+                    "Local video attached"
+                }
+
+                !catalogStreamUrl.isNullOrBlank() -> {
+                    "Online stream available"
+                }
+
+                else -> {
+                    "No video attached"
+                }
+            }
+
             binding.btnPlayMovie.visibility = View.VISIBLE
         }
     }
@@ -200,21 +219,19 @@ class MovieDetailsActivity : AppCompatActivity() {
     private fun playMovie() {
         val movie = currentMovie ?: return
 
-        if (movie.videoUri.isNullOrBlank()) {
-            binding.tvVideoInfo.text = "No video attached"
-            binding.btnPlayMovie.visibility = View.GONE
+        val videoSource = if (!movie.videoUri.isNullOrBlank()) {
+            movie.videoUri
         } else {
-            binding.tvVideoInfo.text = if (StreamConstants.isOnlineStream(movie.videoUri)) {
-                "Online stream attached"
-            } else {
-                "Local video attached"
-            }
+            StreamCatalog.getStreamUrlForMovie(movie.title)
+        }
 
-            binding.btnPlayMovie.visibility = View.VISIBLE
+        if (videoSource.isNullOrBlank()) {
+            Toast.makeText(this, "No video selected", Toast.LENGTH_SHORT).show()
+            return
         }
 
         val intent = Intent(this, VlcPlayerActivity::class.java)
-        intent.putExtra("video_uri", movie.videoUri)
+        intent.putExtra("video_uri", videoSource)
         intent.putExtra("movie_title", movie.title)
         startActivity(intent)
     }

@@ -67,4 +67,7 @@ dependencies {
 
     // QR Code generation
     implementation("com.google.zxing:core:3.5.3")
+
+    // Fragments
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
 }

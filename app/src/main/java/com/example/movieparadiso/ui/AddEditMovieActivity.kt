@@ -34,7 +34,7 @@ class AddEditMovieActivity : AppCompatActivity() {
         registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri: Uri? ->
             if (uri != null) {
                 selectedVideoUri = uri.toString()
-                binding.tvSelectedVideo.text = "Video selected"
+                binding.tvSelectedVideo.text = "Local video selected"
 
                 try {
                     contentResolver.takePersistableUriPermission(
@@ -43,7 +43,6 @@ class AddEditMovieActivity : AppCompatActivity() {
                     )
                 } catch (_: Exception) {
                     // Some providers do not support persistable permissions.
-                    // The URI can still work during the current session.
                 }
             } else {
                 Toast.makeText(this, "No video selected", Toast.LENGTH_SHORT).show()
@@ -128,28 +127,14 @@ class AddEditMovieActivity : AppCompatActivity() {
         selectedVideoUri = movie.videoUri
         existingCreatedAt = movie.createdAt
 
-        binding.tvSelectedVideo.text = when {
-            movie.videoUri.isNullOrBlank() -> {
-                "No video selected"
-            }
-
-            StreamConstants.isOnlineStream(movie.videoUri) -> {
-                "Online stream selected"
-            }
-
-            else -> {
-                "Local video selected"
-            }
+        binding.tvSelectedVideo.text = if (movie.videoUri.isNullOrBlank()) {
+            "No local video selected"
+        } else {
+            "Local video selected"
         }
     }
 
     private fun setupClickListeners() {
-        binding.btnUseOnlineStream.setOnClickListener {
-            selectedVideoUri = StreamConstants.DEFAULT_ONLINE_STREAM_URL
-            binding.tvSelectedVideo.text = "Online stream selected"
-            Toast.makeText(this, "Online stream selected", Toast.LENGTH_SHORT).show()
-        }
-
         binding.btnChooseVideo.setOnClickListener {
             videoPickerLauncher.launch(arrayOf("video/*"))
         }

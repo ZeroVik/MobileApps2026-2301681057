@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/homeRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="28dp">
+
+        <FrameLayout
+            android:id="@+id/heroSection"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:background="@color/app_surface">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#33000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="28dp">
+
+                <TextView
+                    android:id="@+id/tvHeroLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_primary"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:text="ONLINE STREAM"
+                    android:textColor="@color/app_primary_text"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvHeroTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="The Seventh Seal"
+                    android:textColor="@color/app_text_primary"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvHeroSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="A cinematic streaming experience from your online catalog."
+                    android:textColor="@color/app_text_secondary"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnHeroPlay"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/app_primary"
+                        android:text="▶ Play"
+                        android:textColor="@color/app_primary_text"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnHeroDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/app_button_dark"
+                        android:text="Details"
+                        android:textColor="@color/app_button_dark_text"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="22dp"
+            android:text="Watch Online"
+            android:textColor="@color/app_text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOnlineMovies"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginTop="12dp"
+            android:clipToPadding="false"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp" />
+
+        <TextView
+            android:id="@+id/tvHomeHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="22dp"
+            android:text="Online movies are loaded from the stream catalog and can be played directly."
+            android:textColor="@color/app_text_secondary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</ScrollView>
