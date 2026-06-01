@@ -141,17 +141,22 @@ MainActivity (Home)
 
 ##  Скрийншоти
 
-| Home | Library | Details |
-|------|---------|---------|
-| ![Home](docs/screenshots/home.png) | ![Library](docs/screenshots/library.png) | ![Details](docs/screenshots/details.png) |
 
-| Stats | Add / Edit | QR код |
-|-------|------------|--------|
-| ![Stats](docs/screenshots/stats.png) | ![AddEdit](docs/screenshots/add_edit.png) | ![QR](docs/screenshots/qr.png) |
+<p align="center">
+  <img src="docs/screenshots/home.png" width="230" />
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/library.png" width="230" />
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/details.png" width="230" />
+</p>
 
-> Замени файловете в `docs/screenshots/` с реални снимки от устройството/емулатора.
-
----
+<p align="center">
+  <img src="docs/screenshots/stats.png" width="230" />
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/add_edit.png" width="230" />
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/qr.png" width="230" />
+</p>
 
 ##  APK
 
