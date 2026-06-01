@@ -39,8 +39,7 @@
 4. Данните се **запазват след рестарт**, защото са в локалната база.
 
 **Възпроизвеждане на видео:**
-- Локално видео → `PlayerActivity` (Media3 / ExoPlayer).
-- Онлайн стрийм → `VlcPlayerActivity` (libVLC) с контроли за пауза, превъртане,
+- Онлайн стрийм / локално видео → `VlcPlayerActivity` (libVLC) с контроли за пауза, превъртане,
   избор на аудио пътека и субтитри.
 
 **Допълнителни функции:**
@@ -80,7 +79,7 @@ UI (Activities / Fragments)
 - Room (persistence) + Coroutines
 - Lifecycle / LiveData / ViewModel
 - Material Components (light/dark тема)
-- Media3 ExoPlayer (локално видео) и libVLC (онлайн стрийм)
+- libVLC (онлайн стрийм и локално съдържание)
 - ZXing (QR код)
 
 **Параметри:**
