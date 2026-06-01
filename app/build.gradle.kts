@@ -16,7 +16,34 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters += listOf("arm64-v8a", "armeabi-v7a")
+        }
     }
+
+    signingConfigs {
+        create("release") {
+            storeFile = file(
+                (findProperty("MP_STORE_FILE") as String?) ?: "../keystore/movieparadiso.jks"
+            )
+            storePassword = (findProperty("MP_STORE_PASSWORD") as String?) ?: ""
+            keyAlias = (findProperty("MP_KEY_ALIAS") as String?) ?: "movieparadiso"
+            keyPassword = (findProperty("MP_KEY_PASSWORD") as String?) ?: ""
+        }
+    }
+
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+
+
 
     buildFeatures {
         viewBinding = true
