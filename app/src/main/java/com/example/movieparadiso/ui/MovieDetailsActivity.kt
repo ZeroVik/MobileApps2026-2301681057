@@ -23,6 +23,10 @@ class MovieDetailsActivity : AppCompatActivity() {
     private var movieId: Int = -1
     private var currentMovie: MovieEntity? = null
 
+    private var isOnline = false
+    private var onlineTitle: String = ""
+    private var onlineStreamUrl: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,9 +36,53 @@ class MovieDetailsActivity : AppCompatActivity() {
         FullscreenHelper.enableFullscreen(this)
 
         setupViewModel()
-        readMovieId()
         setupClickListeners()
-        observeMovie()
+
+        isOnline = intent.getBooleanExtra("is_online", false)
+
+        if (isOnline) {
+            showOnlineMovie()
+        } else {
+            readMovieId()
+            observeMovie()
+        }
+    }
+
+    private fun showOnlineMovie() {
+        onlineTitle = intent.getStringExtra("online_title").orEmpty()
+        onlineStreamUrl = intent.getStringExtra("online_stream_url")
+        val description = intent.getStringExtra("online_description").orEmpty()
+
+        binding.tvDetailsTitle.text = onlineTitle
+        binding.tvDetailsDirector.text = "Online stream"
+        binding.tvDetailsGenre.text = "Streaming"
+        binding.tvDetailsYear.text = "Online"
+        binding.tvDetailsRating.text = "★ HD"
+        binding.tvDetailsStatus.text = "Online"
+        binding.tvDetailsFavorite.text = "Catalog"
+
+        binding.tvDetailsNotes.text = if (description.isBlank()) {
+            "No description available."
+        } else {
+            description
+        }
+
+        binding.tvVideoInfo.text = if (onlineStreamUrl.isNullOrBlank()) {
+            "No stream available"
+        } else {
+            "Online stream available"
+        }
+
+        // Library-only actions do not apply to catalog streams.
+        binding.btnEditMovie.visibility = View.GONE
+        binding.btnDeleteMovie.visibility = View.GONE
+        binding.btnShareMovie.visibility = View.GONE
+
+        binding.btnPlayMovie.visibility = if (onlineStreamUrl.isNullOrBlank()) {
+            View.GONE
+        } else {
+            View.VISIBLE
+        }
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -217,6 +265,20 @@ class MovieDetailsActivity : AppCompatActivity() {
     }
 
     private fun playMovie() {
+        if (isOnline) {
+            val url = onlineStreamUrl
+            if (url.isNullOrBlank()) {
+                Toast.makeText(this, "No video selected", Toast.LENGTH_SHORT).show()
+                return
+            }
+
+            val intent = Intent(this, VlcPlayerActivity::class.java)
+            intent.putExtra("video_uri", url)
+            intent.putExtra("movie_title", onlineTitle)
+            startActivity(intent)
+            return
+        }
+
         val movie = currentMovie ?: return
 
         val videoSource = if (!movie.videoUri.isNullOrBlank()) {

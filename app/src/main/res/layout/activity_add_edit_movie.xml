@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_background"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,45 +36,49 @@
         <EditText
             android:id="@+id/etTitle"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="58dp"
             android:layout_marginTop="26dp"
-            android:backgroundTint="@color/app_primary"
+            android:background="@drawable/bg_input"
             android:hint="Movie title"
             android:inputType="textCapWords"
+            android:paddingHorizontal="18dp"
             android:textColor="@color/app_text_primary"
             android:textColorHint="@color/app_text_secondary" />
 
         <EditText
             android:id="@+id/etDirector"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="58dp"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/app_primary"
+            android:background="@drawable/bg_input"
             android:hint="Director"
             android:inputType="textCapWords"
+            android:paddingHorizontal="18dp"
             android:textColor="@color/app_text_primary"
             android:textColorHint="@color/app_text_secondary" />
 
         <EditText
             android:id="@+id/etGenre"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="58dp"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/app_primary"
+            android:background="@drawable/bg_input"
             android:hint="Genre"
             android:inputType="textCapWords"
+            android:paddingHorizontal="18dp"
             android:textColor="@color/app_text_primary"
             android:textColorHint="@color/app_text_secondary" />
 
         <EditText
             android:id="@+id/etYear"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="58dp"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/app_primary"
+            android:background="@drawable/bg_input"
             android:hint="Year"
             android:inputType="number"
             android:maxLength="4"
+            android:paddingHorizontal="18dp"
             android:textColor="@color/app_text_primary"
             android:textColorHint="@color/app_text_secondary" />
 
@@ -81,7 +86,7 @@
             android:id="@+id/tvStatusLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="20dp"
             android:text="Movie status"
             android:textColor="@color/app_text_primary"
             android:textSize="16sp"
@@ -90,20 +95,21 @@
         <Spinner
             android:id="@+id/spinnerStatus"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="58dp"
             android:layout_marginTop="8dp"
-            android:backgroundTint="@color/app_primary"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp" />
+            android:background="@drawable/bg_input"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp" />
 
         <EditText
             android:id="@+id/etRating"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="58dp"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/app_primary"
+            android:background="@drawable/bg_input"
             android:hint="Rating 0 - 5"
             android:inputType="numberDecimal"
+            android:paddingHorizontal="18dp"
             android:textColor="@color/app_text_primary"
             android:textColorHint="@color/app_text_secondary" />
 
@@ -112,11 +118,12 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/app_primary"
+            android:background="@drawable/bg_input"
             android:gravity="top"
             android:hint="Notes"
             android:inputType="textMultiLine"
-            android:paddingTop="12dp"
+            android:paddingHorizontal="18dp"
+            android:paddingTop="14dp"
             android:textColor="@color/app_text_primary"
             android:textColorHint="@color/app_text_secondary" />
 
@@ -129,8 +136,6 @@
             android:text="Mark as favorite"
             android:textColor="@color/app_text_primary"
             android:textSize="16sp" />
-
-
 
         <Button
             android:id="@+id/btnChooseVideo"
@@ -145,7 +150,7 @@
             android:id="@+id/tvSelectedVideo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:text="No video selected"
             android:textColor="@color/app_text_secondary"
             android:textSize="14sp" />

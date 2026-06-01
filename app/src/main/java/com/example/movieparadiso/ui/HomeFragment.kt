@@ -30,6 +30,27 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setupHero()
         setupOnlineMovies()
+        setupThemeToggle()
+    }
+
+    private fun setupThemeToggle() {
+        updateThemeLabel()
+
+        binding.btnThemeToggle.setOnClickListener {
+            val next = when (ThemeManager.getSavedTheme(requireContext())) {
+                ThemeManager.MODE_SYSTEM -> ThemeManager.MODE_LIGHT
+                ThemeManager.MODE_LIGHT -> ThemeManager.MODE_DARK
+                else -> ThemeManager.MODE_SYSTEM
+            }
+
+            ThemeManager.saveTheme(requireContext(), next)
+            updateThemeLabel()
+            requireActivity().recreate()
+        }
+    }
+
+    private fun updateThemeLabel() {
+        binding.btnThemeToggle.text = "🌓 ${ThemeManager.getThemeLabel(requireContext())}"
     }
 
     private fun setupHero() {
@@ -51,8 +72,17 @@ class HomeFragment : Fragment() {
         }
 
         binding.btnHeroDetails.setOnClickListener {
-            playOnlineMovie(featuredMovie)
+            openOnlineDetails(featuredMovie)
         }
+    }
+
+    private fun openOnlineDetails(movie: com.example.movieparadiso.data.OnlineMovie) {
+        val intent = Intent(requireContext(), MovieDetailsActivity::class.java)
+        intent.putExtra("is_online", true)
+        intent.putExtra("online_title", movie.title)
+        intent.putExtra("online_description", movie.description)
+        intent.putExtra("online_stream_url", movie.streamUrl)
+        startActivity(intent)
     }
 
     private fun setupOnlineMovies() {

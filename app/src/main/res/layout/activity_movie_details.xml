@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_background"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,11 +45,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/app_chip_background"
+                android:background="@drawable/bg_chip"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:paddingHorizontal="14dp"
-                android:paddingVertical="8dp"
+                android:paddingVertical="10dp"
                 android:text="Genre"
                 android:textColor="@color/app_text_primary"
                 android:textSize="14sp" />
@@ -58,9 +59,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:background="@color/app_chip_background"
+                android:background="@drawable/bg_chip"
                 android:paddingHorizontal="14dp"
-                android:paddingVertical="8dp"
+                android:paddingVertical="10dp"
                 android:text="Year"
                 android:textColor="@color/app_text_primary"
                 android:textSize="14sp" />
@@ -70,11 +71,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:background="@color/app_primary"
+                android:background="@drawable/bg_badge_primary"
                 android:gravity="center"
                 android:minWidth="70dp"
                 android:paddingHorizontal="14dp"
-                android:paddingVertical="8dp"
+                android:paddingVertical="10dp"
                 android:singleLine="true"
                 android:text="★ 5.0"
                 android:textColor="@color/app_primary_text"
@@ -88,9 +89,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:background="@color/app_chip_special_background"
+            android:background="@drawable/bg_chip_special"
             android:paddingHorizontal="14dp"
-            android:paddingVertical="8dp"
+            android:paddingVertical="10dp"
             android:text="Status"
             android:textColor="@color/app_primary"
             android:textSize="14sp"
@@ -101,9 +102,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:background="@color/app_chip_background"
+            android:background="@drawable/bg_chip"
             android:paddingHorizontal="14dp"
-            android:paddingVertical="8dp"
+            android:paddingVertical="10dp"
             android:text="Library"
             android:textColor="@color/app_text_primary"
             android:textSize="14sp" />
@@ -121,12 +122,13 @@
             android:id="@+id/tvDetailsNotes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@color/app_surface"
-            android:padding="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_surface_panel"
+            android:padding="18dp"
             android:text="Movie notes..."
             android:textColor="@color/app_text_secondary"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:lineSpacingMultiplier="1.2" />
 
         <TextView
             android:id="@+id/tvVideoInfo"
@@ -143,7 +145,7 @@
             android:layout_height="56dp"
             android:layout_marginTop="22dp"
             android:backgroundTint="@color/app_primary"
-            android:text="Play Movie"
+            android:text="▶  Play Movie"
             android:textColor="@color/app_primary_text"
             android:textStyle="bold" />
 

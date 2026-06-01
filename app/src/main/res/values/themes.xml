@@ -2,16 +2,71 @@
 
     <style name="Theme.MovieParadiso" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/app_primary</item>
-        <item name="colorPrimaryVariant">@color/app_primary</item>
+        <item name="colorPrimaryVariant">@color/app_primary_dark</item>
         <item name="colorOnPrimary">@color/app_primary_text</item>
+
+        <item name="colorSecondary">@color/app_primary</item>
+        <item name="colorSecondaryVariant">@color/app_primary_dark</item>
+        <item name="colorOnSecondary">@color/app_primary_text</item>
+
+        <item name="android:colorBackground">@color/app_background</item>
+        <item name="colorSurface">@color/app_surface</item>
+        <item name="colorOnSurface">@color/app_text_primary</item>
+        <item name="colorError">@color/app_danger</item>
+        <item name="colorOnError">@color/app_danger_text</item>
 
         <item name="android:windowBackground">@color/app_background</item>
         <item name="android:navigationBarColor">@color/app_background</item>
         <item name="android:statusBarColor">@color/app_background</item>
 
-        <item name="android:fontFamily">sans</item>
+        <item name="android:fontFamily">sans-serif</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+
+        <!-- Modern rounded shapes -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MP.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MP.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MP.Large</item>
+
+        <!-- Component defaults -->
+        <item name="materialButtonStyle">@style/Widget.MP.Button</item>
+    </style>
+
+    <style name="ShapeAppearance.MP.Small" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.MP.Medium" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">22dp</item>
+    </style>
+
+    <style name="ShapeAppearance.MP.Large" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28dp</item>
+    </style>
+
+    <style name="Widget.MP.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textSize">15sp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="rippleColor">#33FFFFFF</item>
+    </style>
+
+    <style name="Widget.MP.FilterChip" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="cornerRadius">22dp</item>
     </style>
 
 </resources>

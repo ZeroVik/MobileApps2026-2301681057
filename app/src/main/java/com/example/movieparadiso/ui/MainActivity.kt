@@ -2,6 +2,7 @@ package com.example.movieparadiso.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import com.example.movieparadiso.R
 import com.example.movieparadiso.databinding.ActivityMainBinding
@@ -19,6 +20,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         FullscreenHelper.enableFullscreen(this)
+
+        // The app is fully immersive, so prevent the bottom navigation from
+        // applying system window insets as internal padding. Otherwise on real
+        // devices the gesture-bar inset squeezes the icons to the top of the bar.
+        ViewCompat.setOnApplyWindowInsetsListener(binding.bottomNavigation) { _, insets ->
+            insets
+        }
 
         setupBottomNavigation()
 
@@ -50,12 +58,12 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_favorites -> {
-                    openFragment(FavoritesPlaceholderFragment())
+                    openFragment(FavoritesFragment())
                     true
                 }
 
                 R.id.nav_stats -> {
-                    openFragment(StatsPlaceholderFragment())
+                    openFragment(StatsFragment())
                     true
                 }
 

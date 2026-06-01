@@ -1,6 +1,7 @@
 package com.example.movieparadiso.ui
 
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -138,10 +139,10 @@ class LibraryFragment : Fragment() {
 
         buttons.forEach { (filter, button) ->
             if (filter == selectedFilter) {
-                button.setBackgroundColor(primary)
+                button.backgroundTintList = ColorStateList.valueOf(primary)
                 button.setTextColor(primaryText)
             } else {
-                button.setBackgroundColor(normal)
+                button.backgroundTintList = ColorStateList.valueOf(normal)
                 button.setTextColor(normalText)
             }
         }

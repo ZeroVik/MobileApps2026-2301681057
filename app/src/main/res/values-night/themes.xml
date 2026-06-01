@@ -1,16 +1,35 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.MovieParadiso" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/app_primary</item>
-        <item name="colorPrimaryVariant">@color/app_primary</item>
+        <item name="colorPrimaryVariant">@color/app_primary_dark</item>
         <item name="colorOnPrimary">@color/app_primary_text</item>
+
+        <item name="colorSecondary">@color/app_primary</item>
+        <item name="colorSecondaryVariant">@color/app_primary_dark</item>
+        <item name="colorOnSecondary">@color/app_primary_text</item>
+
+        <item name="android:colorBackground">@color/app_background</item>
+        <item name="colorSurface">@color/app_surface</item>
+        <item name="colorOnSurface">@color/app_text_primary</item>
+        <item name="colorError">@color/app_danger</item>
+        <item name="colorOnError">@color/app_danger_text</item>
 
         <item name="android:windowBackground">@color/app_background</item>
         <item name="android:navigationBarColor">@color/app_background</item>
         <item name="android:statusBarColor">@color/app_background</item>
 
-        <item name="android:fontFamily">sans</item>
+        <item name="android:fontFamily">sans-serif</item>
         <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+
+        <!-- Modern rounded shapes -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MP.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MP.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MP.Large</item>
+
+        <!-- Component defaults -->
+        <item name="materialButtonStyle">@style/Widget.MP.Button</item>
     </style>
 
 </resources>
