@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/qrRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical"
+    android:paddingStart="24dp"
+    android:paddingTop="38dp"
+    android:paddingEnd="24dp"
+    android:paddingBottom="38dp">
+
+    <TextView
+        android:id="@+id/tvQrTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Movie QR Code"
+        android:textColor="@color/app_text_primary"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvQrSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Scan this code to view the movie information."
+        android:textColor="@color/app_text_secondary"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/ivQrCode"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="36dp"
+        android:background="@color/app_surface"
+        android:contentDescription="QR Code"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/tvQrInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="Movie info"
+        android:textColor="@color/app_text_secondary"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnCloseQr"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/app_button_dark"
+        android:text="Back"
+        android:textColor="@color/app_button_dark_text" />
+
+</LinearLayout>
