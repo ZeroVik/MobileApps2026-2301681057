@@ -146,8 +146,8 @@
             android:layout_height="wrap_content"
             android:max="1000"
             android:progress="0"
-            android:progressTint="#F5C542"
-            android:thumbTint="#F5C542" />
+            android:progressTint="#FFC53D"
+            android:thumbTint="#FFC53D" />
 
         <LinearLayout
             android:layout_width="match_parent"

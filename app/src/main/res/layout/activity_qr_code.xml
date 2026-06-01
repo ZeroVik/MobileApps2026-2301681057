@@ -30,13 +30,13 @@
 
     <ImageView
         android:id="@+id/ivQrCode"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="36dp"
-        android:background="@color/app_surface"
+        android:background="@drawable/bg_surface_panel"
         android:contentDescription="QR Code"
-        android:padding="16dp" />
+        android:padding="22dp" />
 
     <TextView
         android:id="@+id/tvQrInfo"

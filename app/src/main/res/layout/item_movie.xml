@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="8dp"
-    card_view:cardBackgroundColor="@color/app_surface"
-    card_view:cardCornerRadius="20dp"
-    card_view:cardElevation="5dp">
+    android:layout_marginHorizontal="18dp"
+    android:layout_marginVertical="7dp"
+    app:cardBackgroundColor="@color/app_surface"
+    app:cardCornerRadius="22dp"
+    app:cardElevation="3dp"
+    app:strokeColor="@color/app_outline"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:background="@color/app_primary"
+                android:background="@drawable/bg_badge_primary"
                 android:minWidth="58dp"
                 android:gravity="center"
                 android:paddingHorizontal="10dp"
@@ -54,7 +56,7 @@
             android:id="@+id/tvMovieDirector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="4dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:text="Ingmar Bergman"
@@ -73,12 +75,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:background="@color/app_chip_background"
+                android:background="@drawable/bg_chip"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
                 android:paddingHorizontal="12dp"
-                android:paddingVertical="7dp"
+                android:paddingVertical="8dp"
                 android:text="Historical Fantasy, Drama"
                 android:textColor="@color/app_text_primary"
                 android:textSize="13sp" />
@@ -87,11 +89,11 @@
                 android:id="@+id/tvMovieStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/app_chip_background"
+                android:background="@drawable/bg_chip"
                 android:gravity="center"
                 android:minWidth="82dp"
                 android:paddingHorizontal="12dp"
-                android:paddingVertical="7dp"
+                android:paddingVertical="8dp"
                 android:singleLine="true"
                 android:text="Watched"
                 android:textColor="@color/app_text_primary"
@@ -103,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@color/app_chip_special_background"
+            android:background="@drawable/bg_chip_special"
             android:paddingHorizontal="12dp"
             android:paddingVertical="6dp"
             android:singleLine="true"
@@ -114,4 +116,4 @@
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

@@ -50,12 +50,12 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_favorites -> {
-                    openFragment(FavoritesPlaceholderFragment())
+                    openFragment(FavoritesFragment())
                     true
                 }
 
                 R.id.nav_stats -> {
-                    openFragment(StatsPlaceholderFragment())
+                    openFragment(StatsFragment())
                     true
                 }
 

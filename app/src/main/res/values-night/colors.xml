@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="app_background">#101018</color>
-    <color name="app_surface">#1C1C27</color>
-    <color name="app_surface_variant">#2D2D3A</color>
+    <color name="app_background">#0D0E14</color>
+    <color name="app_surface">#181A22</color>
+    <color name="app_surface_variant">#23252F</color>
 
-    <color name="app_text_primary">#FFFFFF</color>
-    <color name="app_text_secondary">#A8A8B3</color>
+    <color name="app_text_primary">#F4F4F7</color>
+    <color name="app_text_secondary">#9A9CA8</color>
 
-    <color name="app_primary">#F5C542</color>
-    <color name="app_primary_text">#111111</color>
+    <color name="app_primary">#FFC53D</color>
+    <color name="app_primary_dark">#E0A106</color>
+    <color name="app_primary_text">#1A1300</color>
 
-    <color name="app_button_dark">#2D2D3A</color>
-    <color name="app_button_dark_text">#FFFFFF</color>
+    <color name="app_button_dark">#23252F</color>
+    <color name="app_button_dark_text">#F4F4F7</color>
 
-    <color name="app_danger">#8B1E1E</color>
-    <color name="app_danger_text">#FFFFFF</color>
+    <color name="app_danger">#FF5A4D</color>
+    <color name="app_danger_text">#2A0400</color>
 
-    <color name="app_chip_background">#2D2D3A</color>
-    <color name="app_chip_special_background">#3A2D1C</color>
+    <color name="app_chip_background">#23252F</color>
+    <color name="app_chip_special_background">#3A2E13</color>
+
+    <color name="app_outline">#2C2E38</color>
+    <color name="app_scrim">#66000000</color>
 </resources>

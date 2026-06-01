@@ -12,11 +12,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="22dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
         android:text="My Library"
         android:textColor="@color/app_text_primary"
-        android:textSize="31sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/btnAddMovie"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,8 +30,11 @@
         android:layout_marginEnd="22dp"
         android:contentDescription="Add movie"
         app:backgroundTint="@color/app_primary"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.MP.Medium"
         app:srcCompat="@android:drawable/ic_input_add"
         app:tint="@color/app_primary_text" />
 
@@ -53,7 +56,7 @@
         android:id="@+id/statusFilterScroll"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="20dp"
         android:clipToPadding="false"
         android:paddingStart="18dp"
         android:paddingEnd="18dp"
@@ -70,33 +73,37 @@
 
             <Button
                 android:id="@+id/btnFilterAll"
+                style="@style/Widget.MP.FilterChip"
                 android:layout_width="wrap_content"
                 android:layout_height="44dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="10dp"
                 android:backgroundTint="@color/app_primary"
                 android:text="All"
                 android:textColor="@color/app_primary_text" />
 
             <Button
                 android:id="@+id/btnFilterToWatch"
+                style="@style/Widget.MP.FilterChip"
                 android:layout_width="wrap_content"
                 android:layout_height="44dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="10dp"
                 android:backgroundTint="@color/app_button_dark"
                 android:text="To Watch"
                 android:textColor="@color/app_button_dark_text" />
 
             <Button
                 android:id="@+id/btnFilterWatching"
+                style="@style/Widget.MP.FilterChip"
                 android:layout_width="wrap_content"
                 android:layout_height="44dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="10dp"
                 android:backgroundTint="@color/app_button_dark"
                 android:text="Watching"
                 android:textColor="@color/app_button_dark_text" />
 
             <Button
                 android:id="@+id/btnFilterWatched"
+                style="@style/Widget.MP.FilterChip"
                 android:layout_width="wrap_content"
                 android:layout_height="44dp"
                 android:backgroundTint="@color/app_button_dark"
@@ -114,7 +121,8 @@
         android:gravity="center"
         android:text="No movies in your library yet.\nTap + to add your first movie."
         android:textColor="@color/app_text_secondary"
-        android:textSize="18sp"
+        android:textSize="17sp"
+        android:lineSpacingMultiplier="1.3"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
