@@ -72,10 +72,17 @@ class HomeFragment : Fragment() {
         }
 
         binding.btnHeroDetails.setOnClickListener {
-            val intent = Intent(requireContext(), AddEditMovieActivity::class.java)
-            intent.putExtra("prefill_title", featuredMovie.title)
-            startActivity(intent)
+            openOnlineDetails(featuredMovie)
         }
+    }
+
+    private fun openOnlineDetails(movie: com.example.movieparadiso.data.OnlineMovie) {
+        val intent = Intent(requireContext(), MovieDetailsActivity::class.java)
+        intent.putExtra("is_online", true)
+        intent.putExtra("online_title", movie.title)
+        intent.putExtra("online_description", movie.description)
+        intent.putExtra("online_stream_url", movie.streamUrl)
+        startActivity(intent)
     }
 
     private fun setupOnlineMovies() {

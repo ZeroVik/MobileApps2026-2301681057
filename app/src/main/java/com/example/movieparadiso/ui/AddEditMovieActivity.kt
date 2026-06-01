@@ -107,11 +107,6 @@ class AddEditMovieActivity : AppCompatActivity() {
             binding.tvScreenTitle.text = "Add Movie"
             binding.btnSaveMovie.text = "Save Movie"
             binding.spinnerStatus.setSelection(0)
-
-            val prefillTitle = intent.getStringExtra("prefill_title")
-            if (!prefillTitle.isNullOrBlank()) {
-                binding.etTitle.setText(prefillTitle)
-            }
         }
     }
 
